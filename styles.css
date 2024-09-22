@@ -1,0 +1,38 @@
+.header-bg {
+  background: linear-gradient(90deg, #4b4f54, #1f1f21);
+}
+header h1 {
+  font-family: 'Pacifico', cursive;
+  /* Use Pacifico for the header */
+}
+h1 {
+  position: relative;
+  overflow: hidden;
+}
+
+h1 span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* Behind the text */
+  transform: translateY(10px);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
