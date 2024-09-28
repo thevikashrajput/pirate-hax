@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- Landing Section -->
+  <section id="landing">
+    <div class="centered">
+      <h1 id="birthday-message">Happy Birthday, Vivek!</h1>
+      <p>Let's Celebrate This Special Day!</p>
+      <a href="#timeline" class="btn">Explore</a>
+    </div>
+  </section>
+
+  <!-- Countdown Timer Section -->
+<section id="countdown">
+  <h2>Countdown to the Big Day!</h2>
+  <div id="timer">
+    <span id="days">00</span> Days
+    <span id="hours">00</span> Hours
+    <span id="minutes">00</span> Minutes
+    <span id="seconds">00</span> Seconds
+  </div>
+</section>
+
+
+
+<!-- Gift Reveal Section -->
+<section id="gift-reveal">
+  <h2>Your Virtual Birthday Gift!</h2>
+  <div class="gift-box">
+    <img src="gift-box.png" alt="Gift Box" id="gift-image">
+    <button id="unwrap-gift">Click to Unwrap!</button>
+    <div id="gift-content" style="display:none;">
+      <h3>Surprise! 🎉</h3>
+      <p>You’ve received a virtual hug and all the best birthday vibes!</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Fireworks container -->
+  <div id="fireworks-container"></div>
+
+  <!-- Audio for Happy Birthday Song -->
+  <audio id="birthday-song" src="sound.mp3" preload="auto"></audio>
+
+  
+
+  <!-- Messages Section -->
+  <section id="messages">
+    <h2>Birthday Wishes</h2>
+    <div class="message-grid">
+      <div class="message-item">"Happy Birthday! Wishing you the best day ever!" - Friend 1</div>
+      <div class="message-item">"Cheers to another year of awesomeness!" - Friend 2</div>
+      <!-- Add more messages here -->
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+<section id="gallery">
+  <h2>Photo Gallery</h2>
+  <div class="gallery-grid">
+    <img src="photo1.jpeg" alt="Memory 1">
+    <img src="photo2.jpeg" alt="Memory 2">
+    <img src="photo3.jpeg" alt="Memory 3">
+    <img src="photo4.jpeg" alt="Memory 4">
+    <!-- Add more images here -->
+  </div>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

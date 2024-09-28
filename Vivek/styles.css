@@ -1,0 +1,411 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* Landing Section */
+#landing {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+#landing h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+#landing p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e91e63;
+}
+
+/* Timeline Section */
+#timeline {
+  background-color: #fafafa;
+}
+
+#timeline h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-around;
+}
+
+.timeline-item {
+  width: 30%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* Messages Section */
+#messages {
+  background-color: #ffffff;
+}
+
+.message-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.message-item {
+  width: 45%;
+  background-color: #fafafa;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+/* Gallery Section */
+#gallery {
+  background-color: #fafafa;
+}
+
+.gallery-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.gallery-grid img {
+  width: 45%;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Guestbook */
+#guestbook {
+  background-color: #ffffff;
+}
+
+textarea {
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button.btn {
+  padding: 10px 30px;
+  font-size: 18px;
+}
+/* Confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #ff4081;
+  top: -10px;
+  animation: fall 5s linear infinite;
+  z-index: 999;
+  border-radius: 50%;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Timeline Item Animation */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+audio {
+  display: none;
+}
+/* Balloon Animation */
+.balloon {
+  position: fixed;
+  bottom: -50px;
+  width: 30px;
+  height: 50px;
+  background-color: pink;
+  border-radius: 50%;
+  animation: float 10s ease-in infinite;
+  z-index: 999;
+}
+
+@keyframes float {
+  0% {
+    bottom: -50px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    bottom: 100vh;
+    transform: translateX(-50px);
+  }
+}
+
+/* Sparkle Animation */
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ffd54f;
+  border-radius: 50%;
+  animation: sparkle 1s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fireworks Effect */
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: explode 2s linear forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+/* General styles for all images */
+img {
+  width: 100%;
+  max-width: 300px; /* Reduce image size globally */
+  height: auto;
+}
+
+/* Specific to Gallery Section */
+.gallery-grid img {
+  max-width: 200px;
+}
+
+/* Timeline and Message section */
+.timeline img, .message-grid img {
+  max-width: 150px;
+}
+/* Countdown Timer */
+#countdown {
+  text-align: center;
+  padding: 20px;
+}
+#timer {
+  font-size: 2em;
+}
+
+/* Fun Facts */
+#fun-facts ul {
+  list-style: none;
+  padding: 0;
+}
+#fun-facts li {
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+
+/* Trivia Quiz */
+#trivia {
+  text-align: center;
+  padding: 20px;
+}
+.quiz-option {
+  padding: 10px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* Testimonials Slider */
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+}
+.testimonial {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.testimonial.visible {
+  opacity: 1;
+}
+
+/* Gift Reveal */
+#gift-reveal {
+  text-align: center;
+  padding: 20px;
+}
+.gift-box {
+  display: inline-block;
+  position: relative;
+}
+#gift-content {
+  margin-top: 20px;
+}
+
+/* Gift Reveal Section */
+#gift-reveal {
+  text-align: center;
+  padding: 20px;
+}
+
+.gift-box {
+  display: inline-block;
+  position: relative;
+}
+
+/* Button Styles for Unwrapping Gift */
+#unwrap-gift {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff4081, #ff80ab);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+#unwrap-gift:hover {
+  background: linear-gradient(45deg, #ff80ab, #ff4081);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+#unwrap-gift:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for Gift Content (revealed after unwrapping) */
+#gift-content {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #ff4081;
+}
+
+/* Photo Gallery Section */
+#gallery {
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  animation: slide 30s linear infinite;
+}
+
+.gallery-grid img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Hover effect: Makes the photo float up */
+.gallery-grid img:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Continuous sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

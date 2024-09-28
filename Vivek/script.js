@@ -1,0 +1,173 @@
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// Play Birthday Song on Button Click
+document.querySelector(".btn").addEventListener("click", function () {
+  const birthdaySong = document.getElementById("birthday-song");
+  birthdaySong.play();
+  launchFireworks();
+});
+
+// Confetti Effect on Page Load
+window.addEventListener("load", function () {
+  confettiEffect();
+  floatBalloons();
+  addSparkles();
+});
+
+// Confetti Effect
+function confettiEffect() {
+  const colors = ["#ff4081", "#81d4fa", "#ffd54f", "#ff5252", "#69f0ae"];
+  for (let i = 0; i < 100; i++) {
+    createConfetti(i, colors[Math.floor(Math.random() * colors.length)]);
+  }
+}
+
+function createConfetti(i, color) {
+  const confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+  document.body.appendChild(confetti);
+
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.animationDelay = Math.random() * 3 + "s";
+  confetti.style.backgroundColor = color;
+  confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+  setTimeout(() => {
+    confetti.remove();
+  }, 3000);
+}
+
+// Balloon Floating Effect
+function floatBalloons() {
+  for (let i = 0; i < 20; i++) {
+    const balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    document.body.appendChild(balloon);
+
+    setTimeout(() => {
+      balloon.remove();
+    }, 10000);
+  }
+}
+
+// Sparkle Effect around the Birthday Message
+function addSparkles() {
+  const message = document.getElementById("birthday-message");
+  for (let i = 0; i < 20; i++) {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.left = Math.random() * 100 + "px";
+    sparkle.style.top = Math.random() * 100 + "px";
+    message.appendChild(sparkle);
+
+    setTimeout(() => {
+      sparkle.remove();
+    }, 5000);
+  }
+}
+
+// Fireworks Effect
+function launchFireworks() {
+  const container = document.getElementById("fireworks-container");
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      const firework = document.createElement("div");
+      firework.classList.add("firework");
+      firework.style.left = Math.random() * 100 + "vw";
+      container.appendChild(firework);
+
+      setTimeout(() => {
+        firework.remove();
+      }, 2000);
+    }, i * 500);
+  }
+}
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Play Birthday Song on Button Click
+document.querySelector('.btn').addEventListener('click', function() {
+  const birthdaySong = document.getElementById('birthday-song');
+  birthdaySong.play();
+  launchFireworks();
+});
+
+// Countdown Timer
+function countdownTimer(targetDate) {
+  const timerElement = document.getElementById('timer');
+  const daysElement = document.getElementById('days');
+  const hoursElement = document.getElementById('hours');
+  const minutesElement = document.getElementById('minutes');
+  const secondsElement = document.getElementById('seconds');
+
+  function updateTimer() {
+    const now = new Date();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+      timerElement.innerHTML = "It's Birthday Time!";
+    } else {
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      daysElement.textContent = days;
+      hoursElement.textContent = hours;
+      minutesElement.textContent = minutes;
+      secondsElement.textContent = seconds;
+    }
+  }
+
+  const interval = setInterval(updateTimer, 1000);
+}
+
+// Set the countdown to midnight on October 1st, 2024
+const birthdayDate = new Date('2024-10-01T00:00:00');
+countdownTimer(birthdayDate);
+
+
+// Trivia Quiz
+const quizOptions = document.querySelectorAll('.quiz-option');
+quizOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    alert('Correct! [Friend\'s Name] loves Blue!');
+  });
+});
+
+// Gift Reveal
+document.getElementById('unwrap-gift').addEventListener('click', function() {
+  document.getElementById('gift-image').style.display = 'none';
+  document.getElementById('gift-content').style.display = 'block';
+});
+
+// Testimonials Slider
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+function showNextTestimonial() {
+  testimonials[currentTestimonial].classList.remove('visible');
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  testimonials[currentTestimonial].classList.add('visible');
+}
+
+setInterval(showNextTestimonial, 3000);
+
