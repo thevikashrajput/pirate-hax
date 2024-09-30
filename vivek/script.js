@@ -1,12 +1,24 @@
 // Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
   });
 });
+
+// Smooth Scroll for Explore Button
+document.querySelector('.btn').addEventListener('click', function(e) {
+  e.preventDefault(); // Prevent default anchor click behavior
+  const targetSection = document.querySelector('#timeline'); // Change this to the section you want to scroll to
+  targetSection.scrollIntoView({
+    behavior: 'smooth', // Smooth scroll
+    block: 'start' // Scroll to the start of the section
+  });
+});
+
+
 
 // Play Birthday Song on Button Click
 document.querySelector(".btn").addEventListener("click", function () {
