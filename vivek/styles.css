@@ -409,3 +409,48 @@ img {
     transform: translateX(-100%);
   }
 }
+
+.gallery-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-grid {
+  display: flex;
+  animation: slide 20s linear infinite; /* Adjust duration for speed */
+}
+
+.gallery-grid img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 10px; /* Adjust margin for spacing */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Adjust based on total width */
+  }
+}
+
+#messages {
+  display: none; /* Hide the messages section by default */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#birthday-message {
+  animation: fadeIn 1s ease forwards; /* Add animation */
+}

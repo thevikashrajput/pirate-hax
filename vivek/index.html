@@ -14,8 +14,8 @@
   <!-- Landing Section -->
   <section id="landing">
     <div class="centered">
-      <h1 id="birthday-message">Happy Birthday, Vivek!</h1>
-      <p>Let's Celebrate This Special Day!</p>
+      <h1 id="birthday-message">Hi, Vivek!</h1>
+      <p>Let's Celebrate Your Special Day!</p>
       <a href="#countdown" class="btn">Explore</a>
     </div>
   </section>
@@ -40,9 +40,12 @@
     <img src="gift-box.png" alt="Gift Box" id="gift-image">
     <button id="unwrap-gift">Click to Unwrap!</button>
     <div id="gift-content" style="display:none;">
-      <h3>Surprise! 🎉</h3>
-      <p><a href="https://pirate-hax.vercel.app/vivek/gift.html">You’ve received a virtual hug and all the best birthday vibes!</a></p>
+      <h3>Surprise will be revealed after 12AM! 🎉</h3>
+      <p id="gift-link" style="display:none;">
+        <a href="https://pirate-hax.vercel.app/vivek/gift.html">Open your gift!</a>
+      </p>
     </div>
+    
   </div>
 </section>
 
@@ -57,29 +60,53 @@
 
   
 
-  <!-- Messages Section -->
-  <section id="messages">
-    <h2>Birthday Wishes</h2>
-    <div class="message-grid">
-      <div class="message-item">"Happy Birthday! Wishing you the best day ever!" - Friend 1</div>
-      <div class="message-item">"Cheers to another year of awesomeness!" - Friend 2</div>
-      <!-- Add more messages here -->
-    </div>
-  </section>
+<!-- Messages Section -->
+<section id="messages">
+  <h2>Birthday Wishes</h2>
+  <div class="message-grid">
+    <div class="message-item">Tel Chura Lunga Bsdk - Hritik</div>
+    <div class="message-item">Score krne kaahan chlna h? - Sumit</div>
+    <div class="message-item">Amazon ka otp dede - Vikash</div>
+    <!-- Add more messages here -->
+  </div>
+</section>
+
 
   <!-- Gallery Section -->
 <section id="gallery">
-  <h2>Photo Gallery</h2>
+  <h2>👀</h2>
   <div class="gallery-grid">
     <img src="photo1.jpeg" alt="Memory 1">
     <img src="photo2.jpeg" alt="Memory 2">
     <img src="photo3.jpeg" alt="Memory 3">
     <img src="photo4.jpeg" alt="Memory 4">
+    <img src="photo5.jpeg" alt="Memory 5">
+    <img src="photo6.jpeg" alt="Memory 6">
+    <img src="photo7.jpeg" alt="Memory 7">
+    <img src="photo8.jpeg" alt="Memory 8">
+    <img src="photo9.jpeg" alt="Memory 9">
     <!-- Add more images here -->
   </div>
 </section>
 
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script>
+// Add this new function
+function updateBirthdayMessage() {
+  const currentDate = new Date();
+  const birthdayMessageElement = document.getElementById("birthday-message");
+
+  if (currentDate >= new Date('2024-10-01T00:00:00')) {
+    birthdayMessageElement.textContent = "Happy Birthday, Vivek!";
+  }
+}
+
+// Call the function to update the message
+updateBirthdayMessage();
+
+// Existing functions...
+</script>
+
 </body>
 </html>

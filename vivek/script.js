@@ -217,6 +217,21 @@ function countdownTimer(targetDate) {
 const birthdayDate = new Date('2024-10-01T00:00:00');
 countdownTimer(birthdayDate);
 
+// Function to check the date and show the gift link if appropriate
+function checkGiftAvailability() {
+  const currentDate = new Date();
+  const giftLink = document.getElementById('gift-link');
+
+  // Show the link only after October 1st
+  if (currentDate >= new Date('2024-10-01T00:00:00')) {
+    giftLink.style.display = 'block';
+  }
+}
+
+// Call the function to check gift availability
+checkGiftAvailability();
+
+
 // Function to show a special message after the countdown ends
 function showBirthdayMessage() {
   const birthdayMessage = document.createElement('div');
@@ -279,4 +294,41 @@ function showNextTestimonial() {
 
 setInterval(showNextTestimonial, 3000);
 
+
+const galleryGrid = document.querySelector('.gallery-grid');
+const images = document.querySelectorAll('.gallery-grid img');
+
+// Clone images for looping effect
+images.forEach(image => {
+  const clone = image.cloneNode(true);
+  galleryGrid.appendChild(clone);
+});
+
+// Adjust the CSS for the gallery
+const totalImages = images.length;
+galleryGrid.style.width = `${totalImages * 100}%`;
+images.forEach(image => {
+  image.style.width = `${100 / totalImages}%`;
+});
+
+// Existing functions...
+
+// Check gift availability
+checkGiftAvailability();
+
+// Function to check the date and show birthday wishes if appropriate
+function checkBirthdayWishes() {
+  const currentDate = new Date();
+  const messagesSection = document.getElementById('messages');
+
+  // Show the wishes only after October 1st
+  if (currentDate >= new Date('2024-10-01T00:00:00')) {
+    messagesSection.style.display = 'block'; // Make the messages section visible
+  } else {
+    messagesSection.style.display = 'none'; // Hide the messages section
+  }
+}
+
+// Call the function to check birthday wishes availability
+checkBirthdayWishes();
 
