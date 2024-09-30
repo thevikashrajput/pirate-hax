@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Smooth Scroll for Explore Button
 document.querySelector('.btn').addEventListener('click', function(e) {
   e.preventDefault(); // Prevent default anchor click behavior
-  const targetSection = document.querySelector('#timeline'); // Change this to the section you want to scroll to
+  const targetSection = document.querySelector('#countdown');
   targetSection.scrollIntoView({
     behavior: 'smooth', // Smooth scroll
     block: 'start' // Scroll to the start of the section
